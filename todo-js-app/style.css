@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font: "Inter", sans-serif;
+  --light-bg: hwb(42 78% 13%);
+  --light-secondary: hwb(42 85% 11%);
+  --light-txt: hwb(0 0% 100%);
+  --light-date-txt: hwb(0 18% 82%);
+  --light-btn-bg: hwb(0 0% 100%);
+  --light-input-bg: hwb(42deg 85% 11%);
+  --light-input-txt: hsla(0, 0%, 52%, 1);
+
+  --shadow: 0px 5px 4px 0px hwb(0deg 0% 100% / 25%);
+
+  --dark-bg: hwb(220 12% 78%);
+  --dark-secondary: hwb(222 11% 85%);
+  --dark-txt: hwb(331 2% 0%);
+  --dark-date-txt: hwb(0 100% 0%);
+  --dark-btn-bg: hwb(331 2% 0%);
+  --dark-input-bg: hwb(0 100% 0% / 0.17);
+  --dark-input-txt: hsla(0, 0%, 48%, 1);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--light-bg); /* durch JS in den dark mode wechseln lassen*/
+}
+
+.todo-container {
+  width: 100%;
+}
+
+.todo-header {
+  width: 100%;
+  height: 6rem;
+  background-color: var(--light-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.todo-header > h1 {
+  font-size: 2.4rem;
+  color: var(--light-txt);
+  letter-spacing: 1.5rem;
+  text-transform: uppercase;
+}
+
+.date-time {
+  padding: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.date-time > .current-time {
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: var(--light-txt);
+  letter-spacing: 1.5rem;
+  text-transform: uppercase;
+}
+
+.date-time > .current-date {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--light-date-txt);
+  letter-spacing: 0.7rem;
+  line-height: 0.8rem;
+  text-transform: uppercase;
+}
+/* todo task element have to break on the right spot if the text is overflowing and the block have to increase size accordingly to the size of text */
+ul {
+  z-index: 1;
+  padding: 3em 8em;
+  width: inherit;
+}
+
+li {
+  /* min-height: 100px; */
+  list-style: none;
+
+  background-color: var(--light-secondary);
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+li > p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--light-txt);
+  padding-left: 1em;
+}
+
+/* #done {
+  width: 10%;
+  text-align: left;
+} */
+
+.add-item {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+}
+
+#send-btn {
+  font-family: var(--font);
+  font-weight: 700;
+  width: 5rem;
+  padding: 0.9em;
+  border: none;
+  border-top-right-radius: 0.5em;
+  background-color: var(--light-btn-bg);
+  color: hwb(0 100% 0%);
+  cursor: pointer;
+}
+#input {
+  font-weight: 500;
+  font-family: var(--font);
+  background-color: var(--light-input-bg);
+  color: var(--light-input-txt);
+  font-weight: 400;
+  width: calc(100% - 5rem);
+  padding: 0.9em;
+  border: none;
+  cursor: pointer;
+  border-top-left-radius: 0.5em;
+}
+
+#input::placeholder {
+  letter-spacing: 1rem;
+  font-weight: 500;
+}
+
+[data-theme="dark"] {
+  --dark-bg: hwb(220 12% 78%);
+  --dark-secondary: hwb(222 11% 85%);
+  --dark-txt: hwb(331 2% 0%);
+  --dark-date-txt: hwb(0 48% 52%);
+  --dark-btn-bg: hwb(331 2% 0%);
+  --dark-input-bg: hwb(0 100% 0% / 0.17);
+  --dark-input-txt: hsla(0, 0%, 48%, 1);
+}

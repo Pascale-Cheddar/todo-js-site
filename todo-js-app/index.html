@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/527979fcb3.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="todo-container"></div>
+    <div class="todo-header"><h1>I have something todo?</h1></div>
+    <div class="container-body">
+      <div class="date-time">
+        <p class="current-time">13:30</p>
+        <p class="current-date">Monday June 12</p>
+      </div>
+    </div>
+    <div class="todo-item">
+      <ul id="list">
+        <!-- 
+        <li>
+          <input type="checkbox" id="done" /> 
+          <p class="item">Cosdfsdfsdfffsdfdsfdsfsdffsok dish</p>
+          <i class="fa-sharp fa-solid fa-trash fa-2x" aria-hidden="true"></i>
+        </li> -->
+      </ul>
+    </div>
+    <form class="add-item">
+      <input type="text" id="input" placeholder="TELL WHAT TODO!" />
+      <button id="send-btn" value="send">Add</button>
+    </form>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
